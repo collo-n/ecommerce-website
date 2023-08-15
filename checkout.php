@@ -41,16 +41,16 @@ if(isset($_POST['order'])){
       //redirecting to payments page
       switch ($method) {
          case "cash on delivery":
-             header("Location: payment/cod.php");
+             header("Location: cod.php");
              break;
          case "credit card":
-             header("Location: payment/card.php");
+             header("Location: card.php");
              break;
          case "mpesa":
-             header("Location: payment/mpesa.php");
+             header("Location: mpesa.php");
              break;
          case "crypto currency":
-            header("Location: payment/coinbase.php");
+            header("Location: coinbase.php");
             break;
          default:
              // Handle other cases or show an error message
@@ -168,18 +168,6 @@ if(isset($_POST['order'])){
    </form>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php include 'components/footer.php'; ?>
 

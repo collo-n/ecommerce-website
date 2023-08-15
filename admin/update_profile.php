@@ -37,9 +37,9 @@ if(isset($_POST['submit'])){
       if($new_pass != $empty_pass){
          $update_admin_pass = $conn->prepare("UPDATE `admins` SET password = ? WHERE id = ?");
          $update_admin_pass->execute([$confirm_pass, $admin_id]);
-         $message[] = 'password updated successfully!';
+         $message[] = 'Password updated successfully!';
       }else{
-         $message[] = 'please enter a new password!';
+         $message[] = 'Please enter a new password!';
       }
    }
    
@@ -53,7 +53,7 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>update profile</title>
+   <title>Update profile</title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
