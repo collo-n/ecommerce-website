@@ -49,7 +49,7 @@ if(isset($_POST['order'])){
          case "mpesa":
              header("Location: mpesa.php");
              break;
-         case "crypto currency":
+         case "crypto-currency":
             header("Location: coinbase.php");
             break;
          default:
@@ -134,7 +134,7 @@ if(isset($_POST['order'])){
                <option value="cash on delivery">Cash on delivery</option>
                <option value="credit card">Credit card</option>
                <option value="mpesa">Mpesa</option>
-               <option value="cypto-currency">Crpto-currency</option>
+               <option value="crypto-currency">Crpto-currency</option>
             </select>
          </div>
          <div class="inputBox">

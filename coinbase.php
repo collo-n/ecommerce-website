@@ -53,7 +53,7 @@ include 'components/wishlist_cart.php';
             <?php
             $user_id = $_SESSION['user_id'];
 
-            $select_orders = $conn->prepare("SELECT total_products, total_price FROM orders WHERE user_id = ?");
+            $select_orders = $conn->prepare("SELECT total_products, total_price FROM orders WHERE user_id = ? ORDER BY id DESC LIMIT 1");
             $select_orders->execute([$user_id]);
 
             if ($select_orders->rowCount() > 0) {

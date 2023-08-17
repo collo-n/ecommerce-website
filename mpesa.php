@@ -11,8 +11,8 @@ if (isset($_SESSION['user_id'])) {
 };
 
 //YOU MPESA API KEYS
-$consumerKey = "Bl3k44anQFWSILWoDTCIZs2q9QllDv3j"; //Fill with your app Consumer Key
-$consumerSecret = "TGAjfR5yslt7cqv8"; //Fill with your app Consumer Secret
+$consumerKey = ""; //Fill with your app Consumer Key
+$consumerSecret = ""; //Fill with your app Consumer Secret
 //ACCESS TOKEN URL
 $access_token_url = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
 $headers = ['Content-Type:application/json; charset=utf8'];
@@ -38,6 +38,11 @@ $stkpushheader = ['Content-Type:application/json', 'Authorization:Bearer ' . $ac
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $money = $_POST['money'];
     $phone = $_POST['phone'];
+    // Remove non-numeric characters from the phone number
+    $phone = preg_replace('/[^0-9]/', '', $phone);
+
+    // Ensure the phone number is in the correct format (254XXXXXXXXX)
+    $phone = preg_replace('/^0/', '254', $phone);
 
     // ENCRYPT DATA TO GET PASSWORD
     $Password = base64_encode($BusinessShortCode . $passkey . $Timestamp);
@@ -74,6 +79,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($ResponseCode == "0") {
         $message = "Payment Successful"; // Set your error message here
         echo "<script>alert('" . addslashes($message) . "'); window.location.href = 'orders.php';</script>";
+        exit;
+    } else {
+        $message = "Enter a correct phone number"; // Set your error message here
+        echo "<script>alert('" . addslashes($message) . "'); window.location.href = 'mpesa.php';</script>";
         exit;
     }
     curl_close($curl);
@@ -147,7 +156,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php
         $user_id = $_SESSION['user_id'];
 
-        $select_orders = $conn->prepare("SELECT total_products, total_price FROM orders WHERE user_id = ?");
+        $select_orders = $conn->prepare("SELECT total_products, total_price FROM orders WHERE user_id = ? ORDER BY id DESC LIMIT 1");
+        
         $select_orders->execute([$user_id]);
 
         if ($select_orders->rowCount() > 0) {

@@ -43,7 +43,9 @@ if(isset($_SESSION['user_id'])){
 
       <div class="content">
          <h3>Why choose us?</h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam veritatis minus et similique doloribus? Harum molestias tenetur eaque illum quas? Obcaecati nulla in itaque modi magnam ipsa molestiae ullam consequuntur.</p>
+         <p>Duka is an e-commerce website that seek to leverage the use of cryptocurrency by allow customers to pay using their coins from different crypto wallets.
+            This is to make your transactions faster,safer and reliable.
+         </p>
          <a href="contact.php" class="btn">Contact us</a>
       </div>
 
@@ -69,7 +71,7 @@ if(isset($_SESSION['user_id'])){
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john doe</h3>
+         <h3>John Michael</h3>
       </div>
 
       <div class="swiper-slide slide">
@@ -82,7 +84,7 @@ if(isset($_SESSION['user_id'])){
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john doe</h3>
+         <h3>Sussy Monroe</h3>
       </div>
 
       <div class="swiper-slide slide">
@@ -95,7 +97,7 @@ if(isset($_SESSION['user_id'])){
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john doe</h3>
+         <h3>Alvin Oneil</h3>
       </div>
 
       <div class="swiper-slide slide">
@@ -108,7 +110,7 @@ if(isset($_SESSION['user_id'])){
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john doe</h3>
+         <h3>Sally Charllotte</h3>
       </div>
 
       <div class="swiper-slide slide">
@@ -121,7 +123,7 @@ if(isset($_SESSION['user_id'])){
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john doe</h3>
+         <h3>Peter Williams</h3>
       </div>
 
       <div class="swiper-slide slide">
@@ -134,7 +136,7 @@ if(isset($_SESSION['user_id'])){
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john doe</h3>
+         <h3>Lucy Cheng</h3>
       </div>
 
    </div>
